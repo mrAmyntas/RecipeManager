@@ -45,7 +45,7 @@ public class MyFrame extends JFrame {
 		mediator.addObserver(recipeListPanel);
 	    JScrollPane scrollPane = new JScrollPane(recipeListPanel);//Wrap the recipeListPanel in a JScrollPane
 	    scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-	    scrollPane.setPreferredSize(new Dimension(400, 680));
+	    scrollPane.setPreferredSize(new Dimension(300, 680));
 	    getContentPane().add(scrollPane);// Add the JScrollPane to the main frame's content pane
 	    
 		//panel for the displaying recipes
@@ -53,11 +53,11 @@ public class MyFrame extends JFrame {
 		mediator.addObserver(recipeTextPanel);
 	    JScrollPane scrollPane2 = new JScrollPane(recipeTextPanel);//Wrap the recipeListPanel in a JScrollPane
 	    scrollPane2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-	    scrollPane2.setPreferredSize(new Dimension(400, 680));
+	    scrollPane2.setPreferredSize(new Dimension(598, 680));
 	    getContentPane().add(scrollPane2);// Add the JScrollPane to the main frame's content pane
 
  		
-		//make app close when pressing escape while focusses on frame
+		//make app close when pressing escape while focuses on frame
         getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(
         KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), "Cancel"); //$NON-NLS-1$
         getRootPane().getActionMap().put("Cancel", new AbstractAction() { 

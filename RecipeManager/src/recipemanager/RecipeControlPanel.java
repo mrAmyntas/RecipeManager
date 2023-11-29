@@ -26,7 +26,6 @@ public class RecipeControlPanel extends JPanel {
 	private JButton removeRecipeButton;
 	private JButton updateRecipeButton;
 
-	
 	RecipeControlPanel(HashMap<String, RecipeData> recipeMap, PanelMediator mediator) {
 		
 		this.setLayout(new GridBagLayout());
