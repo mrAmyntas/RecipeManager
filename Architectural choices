@@ -1,0 +1,11 @@
+
+I decided to store recipes in a textfile. Easy to read/write/parse and no need to setup caching or a database for this simple app.
+
+I made one frame and four panels which each have their own components. With a FlowLayout these could be set in the right place, and
+by locking the windows size it will always look the same. 
+
+I made an interface (PanelObserver) and a 'mediator' class (PanelMediator) to have changes in one panel (e.g. button click) call 
+an update in other panels (e.g. filter certain recipes). 
+
+I put files in one package to keep it simple.
+
