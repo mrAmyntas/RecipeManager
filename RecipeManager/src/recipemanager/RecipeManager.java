@@ -12,11 +12,15 @@ enum filterType {
 	}
 
 public class RecipeManager {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		RecipeScanner recipeScanner = new RecipeScanner();
 		HashMap<String, RecipeData> recipeMap = new HashMap<String, RecipeData>();
 		recipeScanner.readfile(recipeMap);
-		recipeScanner.cleanup();
+		try {
+			recipeScanner.cleanup();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		new GUI(recipeMap);
 	}
 }
