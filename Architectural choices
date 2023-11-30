@@ -9,3 +9,10 @@ an update in other panels (e.g. filter certain recipes).
 
 I put files in one package to keep it simple.
 
+The main method is in RecipeManager.java, which first reads the Recipes text file to parse existing recipes in a hashmap.
+Then a GUI is made, existing of just one frame (MyFrame.java). The frame adds four panels as components;
+RecipeFilterPanel, the top panel where the filter options are set.
+RecipeControlPanel, where the three buttons are set which can add/remove/update recipes.
+RecipeListPanel, where all the recipes are listed as clickable buttons.
+RecipeTextPanel, where the last selected recipe's contents are displayed and can be copied by user.
+The hashmap uses the recipe title as key, and an object of class RecipeData to store all of its required information as value.
