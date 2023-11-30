@@ -269,7 +269,7 @@ public class RecipeFilterPanel extends JPanel {
 	
 	private void checkIngredientIncluded(HashMap<String, RecipeData> recipeMap, String filter_include) {
 		
-		//seperate by comma and remove spaces on start/end
+		//Separate by comma and remove spaces on start/end
 		String[] ingredients_to_filter = filter_include.split(",");		
 		for (int i = 0; i < ingredients_to_filter.length; i++) {
 			ingredients_to_filter[i] = ingredients_to_filter[i].trim();
@@ -294,17 +294,19 @@ public class RecipeFilterPanel extends JPanel {
 	}
 	
 	private void checkIngredientExcluded(HashMap<String, RecipeData> recipeMap, String filter_exclude) {
-		
+		//Set all to unfiltered
 		if (filter_exclude.length() == 0) {
 			recipeMap.forEach((key, value) -> {
 				value.setFiltered(false, recipemanager.filterType.INGR_EXCLUDED);
 			});
 			return;
 		}
+		//Separate by comma and remove spaces on start/end
 		String[] ingredients_to_filter = filter_exclude.split(",");		
 		for (int i = 0; i < ingredients_to_filter.length; i++) {
 			ingredients_to_filter[i] = ingredients_to_filter[i].trim();
 		}
+		//for each recipe find if any of the ingredients in the exclude bar are present, if so, filter it
 		recipeMap.forEach((key, value) -> {
 			List<String> ingredients = value.getIngredients();
 			value.setFiltered(false, recipemanager.filterType.INGR_EXCLUDED);
@@ -324,10 +326,12 @@ public class RecipeFilterPanel extends JPanel {
 	
 	private void checkInstructionsIncluded(HashMap<String, RecipeData> recipeMap, String filter_include) {
 		
+		//Separate by comma and remove spaces on start/end
 		String[] instructions_to_filter = filter_include.split(",");		
 		for (int i = 0; i < instructions_to_filter.length; i++) {
 			instructions_to_filter[i] = instructions_to_filter[i].trim();
 		}
+		//for each recipe find if the instructions in the search field are present, if not, filter it
 		recipeMap.forEach((key, value) -> {
 			value.setFiltered(false, recipemanager.filterType.INSTR_INCLUDED);
 			String instructions = value.getInstructions();
